@@ -31,6 +31,9 @@ public class Main {
     }
 
     public static void main(final String[] args) throws Exception {
+        //This part for testing purpose, to see if connection is make, this will be delete
+        //Need to add item to database
+        //Folder for gui create, here is where we run project.
         final Session session = getSession();
         try {
             System.out.println("querying all the managed entities...");

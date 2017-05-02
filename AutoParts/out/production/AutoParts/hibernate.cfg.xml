@@ -8,6 +8,8 @@
         <property name="connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
         <property name="hbm2ddl.auto">create</property>
         <mapping class="Domain.AutopartEntity"/>
+        <mapping class="Domain.Users"/>
+
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->
 

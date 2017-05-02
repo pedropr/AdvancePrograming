@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Table(name = "AUTOPART", schema = "APP", catalog = "")
 public class AutopartEntity {
     @Id
+    @GeneratedValue
     private int id;
     private String partno;
     private String partname;
