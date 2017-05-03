@@ -6,6 +6,7 @@ import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import java.util.*;
 
 import javax.persistence.metamodel.EntityType;
 
@@ -35,6 +36,7 @@ public class Main {
         //Need to add item to database
         //Folder for gui create, here is where we run project.
         final Session session = getSession();
+        session.beginTransaction();
         try {
             /**
              * This testing park and population table, create default values
@@ -62,6 +64,14 @@ public class Main {
                 }
 
             }
+            session.save(a);
+            session.save(users);
+            Query query = session.getNamedQuery("Authentication").setString("username", "Default")
+                    .setString("password", "Password");
+            ArrayList <Users> results = (ArrayList<Users>) query.list();
+            System.out.println(results);
+            results = (ArrayList<Users>) session.getNamedQuery("getAllUsers").list();
+            System.out.println(results);
         } finally {
             session.close();
         }
