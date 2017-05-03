@@ -5,9 +5,11 @@ import javax.persistence.*;
 /**
  * Created by Pedro on 5/1/2017.
  */
+
+
 @Entity
 @Table(name = "AUTOPART", schema = "APP", catalog = "")
-public class AutopartEntity {
+public class AutoPart {
     @Id
     @GeneratedValue
     private int id;
@@ -105,7 +107,7 @@ public class AutopartEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AutopartEntity that = (AutopartEntity) o;
+        AutoPart that = (AutoPart) o;
 
         if (partno != null ? !partno.equals(that.partno) : that.partno != null) return false;
         if (partname != null ? !partname.equals(that.partname) : that.partname != null) return false;
