@@ -4,6 +4,11 @@ import javax.persistence.*;
 /**
  * Created by Pedro on 5/2/2017.
  */
+@NamedQueries({
+        @NamedQuery(name = "getAllUsers", query = "select u From Users u"),
+        @NamedQuery(name = "Authentication", query = "select u from Users u where u.username = :username and u.password = :password")
+})
+
 @Entity
 @Table
 public class Users {
@@ -19,8 +24,7 @@ public class Users {
 
     }
 
-    public Users(int Id, String username, String password){
-        this.Id = Id;
+    public Users(String username, String password){
         this.username = username;
         this.password = password;
     }

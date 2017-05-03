@@ -1,13 +1,14 @@
+import Domain.AutoPart;
+import Domain.Users;
 import org.hibernate.HibernateException;
 import org.hibernate.Metamodel;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import java.util.*;
 
 import javax.persistence.metamodel.EntityType;
-
-import java.util.Map;
 
 /**
  * Created by Pedro on 5/1/2017.
@@ -35,7 +36,23 @@ public class Main {
         //Need to add item to database
         //Folder for gui create, here is where we run project.
         final Session session = getSession();
+        session.beginTransaction();
         try {
+            /**
+             * This testing park and population table, create default values
+             */
+            Users users = new Users("Default", "Password");
+            session.save(users);
+            AutoPart a = new AutoPart();
+            a.setCarbrand("Toyota");
+            a.setCarmodel("343BC");
+            a.setPartcost(20.00);
+            a.setPartimage("Image1.png");
+            a.setPartname("Bomber");
+            a.setPartprice(300.00);
+            a.setQuantity(5);
+            session.save(a);
+
             System.out.println("querying all the managed entities...");
             final Metamodel metamodel = session.getSessionFactory().getMetamodel();
             for (EntityType<?> entityType : metamodel.getEntities()) {
@@ -45,7 +62,16 @@ public class Main {
                 for (Object o : query.list()) {
                     System.out.println("  " + o);
                 }
+
             }
+            session.save(a);
+            session.save(users);
+            Query query = session.getNamedQuery("Authentication").setString("username", "Default")
+                    .setString("password", "Password");
+            ArrayList <Users> results = (ArrayList<Users>) query.list();
+            System.out.println(results);
+            results = (ArrayList<Users>) session.getNamedQuery("getAllUsers").list();
+            System.out.println(results);
         } finally {
             session.close();
         }
