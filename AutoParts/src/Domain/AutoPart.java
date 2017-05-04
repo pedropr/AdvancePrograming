@@ -133,4 +133,19 @@ public class AutoPart {
         result = 31 * result + (partprice != null ? partprice.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "AutoPart{" +
+                "id=" + id +
+                ", partno='" + partno + '\'' +
+                ", partname='" + partname + '\'' +
+                ", partimage='" + partimage + '\'' +
+                ", carmodel='" + carmodel + '\'' +
+                ", carbrand='" + carbrand + '\'' +
+                ", quantity=" + quantity +
+                ", partcost=" + partcost +
+                ", partprice=" + partprice +
+                '}';
+    }
 }
