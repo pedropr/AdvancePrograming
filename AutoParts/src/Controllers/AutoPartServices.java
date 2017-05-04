@@ -30,4 +30,12 @@ public class AutoPartServices {
         return null;
     }
 
+    public static List<AutoPart> getAutoParts(Session session) throws Exception{
+        return null;
+    }
+
+    public static AutoPart getAutoPart(Session session, int id) throws Exception {
+        return null;
+    }
+
 }
