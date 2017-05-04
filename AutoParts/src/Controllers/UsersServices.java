@@ -1,4 +1,5 @@
 package Controllers;
+import Domain.Users;
 import org.hibernate.HibernateException;
 import org.hibernate.Metamodel;
 import org.hibernate.query.Query;
@@ -15,16 +16,23 @@ import javax.persistence.metamodel.EntityType;
  * Created by Pedro on 5/3/2017.
  */
 public class UsersServices {
-    private static Session session;
 
-    public UsersServices(Session s){
-        session = s;
-    }
-
-    public static boolean Authentication(Session session){
+    public static boolean authentication(Session session){
 
         return true;
 
+    }
+
+    public static boolean createUser(Session session, Users user){
+        return true;
+    }
+
+    public static boolean updateUser(Session session, Users users){
+        return true;
+    }
+
+    public Users getUsers(Session session, String users){
+        return null;
     }
 
 }
