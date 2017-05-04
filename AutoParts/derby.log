@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Wed May 03 08:38:26 EDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015b-ce51-9ae1-000006975cd8 
-on database directory C:\Users\Pedro\Documents\GitHub\AdvancePrograming\AutoParts\AutoParts with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/C:/Apache/db-derby-10.13.1.1-bin/lib/derby.jar
+Wed May 03 20:41:24 AST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015b-d0e7-7e1a-00000661c0e0 
+on database directory /Users/PedroVega/GitHub/AdvancePrograming/AutoParts/AutoParts with class loader sun.misc.Launcher$AppClassLoader@14dad5dc 
+Loaded from file:/Users/PedroVega/GitHub/AdvancePrograming/AutoParts/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_121-b13
-user.dir=C:\Users\Pedro\Documents\GitHub\AdvancePrograming\AutoParts
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/PedroVega/GitHub/AdvancePrograming/AutoParts
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.4
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

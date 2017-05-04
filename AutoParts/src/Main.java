@@ -64,6 +64,7 @@ public class Main {
                 }
 
             }
+
             session.save(a);
             session.save(users);
             Query query = session.getNamedQuery("Authentication").setString("username", "Default")
