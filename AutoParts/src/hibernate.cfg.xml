@@ -4,11 +4,16 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+
         <property name="connection.url">jdbc:derby:AutoParts;create=true</property>
         <property name="connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
         <property name="hbm2ddl.auto">create</property>
+
         <mapping class="Domain.AutoPart"/>
         <mapping class="Domain.Users"/>
+        <mapping class="Domain.Images"/>
+
+
 
         <!-- <property name="connection.username"/> -->
         <!-- <property name="connection.password"/> -->

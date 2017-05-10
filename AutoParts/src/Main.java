@@ -1,3 +1,4 @@
+import Controllers.AutoPartServices;
 import Domain.AutoPart;
 import Domain.Users;
 import org.hibernate.HibernateException;
@@ -47,32 +48,15 @@ public class Main {
             a.setCarbrand("Toyota");
             a.setCarmodel("343BC");
             a.setPartcost(20.00);
-            a.setPartimage("Image1.png");
             a.setPartname("Bomber");
             a.setPartprice(300.00);
             a.setQuantity(5);
             session.save(a);
 
-            System.out.println("querying all the managed entities...");
-            final Metamodel metamodel = session.getSessionFactory().getMetamodel();
-            for (EntityType<?> entityType : metamodel.getEntities()) {
-                final String entityName = entityType.getName();
-                final Query query = session.createQuery("from " + entityName);
-                System.out.println("executing: " + query.getQueryString());
-                for (Object o : query.list()) {
-                    System.out.println("  " + o);
-                }
 
-            }
+            users.setPassword("Hello World");
+            //(ArrayList<Users>) session.getNamedQuery("getAllUsers").list();
 
-            session.save(a);
-            session.save(users);
-            Query query = session.getNamedQuery("Authentication").setString("username", "Default")
-                    .setString("password", "Password");
-            ArrayList <Users> results = (ArrayList<Users>) query.list();
-            System.out.println(results);
-            results = (ArrayList<Users>) session.getNamedQuery("getAllUsers").list();
-            System.out.println(results);
         } finally {
             session.close();
         }
