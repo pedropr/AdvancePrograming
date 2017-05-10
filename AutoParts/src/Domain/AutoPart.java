@@ -1,6 +1,11 @@
 package Domain;
 
 import javax.persistence.*;
+@NamedQueries({
+        @NamedQuery(name = "getAllParts", query = "select p From AutoPart p"),
+        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partname = :partname")
+
+})
 
 /**
  * Created by Pedro on 5/1/2017.
@@ -13,14 +18,35 @@ public class AutoPart {
     @Id
     @GeneratedValue
     private int id;
+
+    @Column(unique = true)
     private String partno;
+
     private String partname;
-    private String partimage;
+
     private String carmodel;
+
     private String carbrand;
+
     private Integer quantity;
+
     private Double partcost;
+
     private Double partprice;
+
+    public AutoPart(){
+
+    }
+
+    public AutoPart(String partno, String partname, String carmodel, String carbrand, Integer quantity, Double partcost, Double partprice) {
+        this.partno = partno;
+        this.partname = partname;
+        this.carmodel = carmodel;
+        this.carbrand = carbrand;
+        this.quantity = quantity;
+        this.partcost = partcost;
+        this.partprice = partprice;
+    }
 
     @Basic
     @Column(name = "PARTNO")
@@ -40,16 +66,6 @@ public class AutoPart {
 
     public void setPartname(String partname) {
         this.partname = partname;
-    }
-
-    @Basic
-    @Column(name = "PARTIMAGE")
-    public String getPartimage() {
-        return partimage;
-    }
-
-    public void setPartimage(String partimage) {
-        this.partimage = partimage;
     }
 
     @Basic
@@ -111,7 +127,6 @@ public class AutoPart {
 
         if (partno != null ? !partno.equals(that.partno) : that.partno != null) return false;
         if (partname != null ? !partname.equals(that.partname) : that.partname != null) return false;
-        if (partimage != null ? !partimage.equals(that.partimage) : that.partimage != null) return false;
         if (carmodel != null ? !carmodel.equals(that.carmodel) : that.carmodel != null) return false;
         if (carbrand != null ? !carbrand.equals(that.carbrand) : that.carbrand != null) return false;
         if (quantity != null ? !quantity.equals(that.quantity) : that.quantity != null) return false;
@@ -125,7 +140,6 @@ public class AutoPart {
     public int hashCode() {
         int result = partno != null ? partno.hashCode() : 0;
         result = 31 * result + (partname != null ? partname.hashCode() : 0);
-        result = 31 * result + (partimage != null ? partimage.hashCode() : 0);
         result = 31 * result + (carmodel != null ? carmodel.hashCode() : 0);
         result = 31 * result + (carbrand != null ? carbrand.hashCode() : 0);
         result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
@@ -140,7 +154,6 @@ public class AutoPart {
                 "id=" + id +
                 ", partno='" + partno + '\'' +
                 ", partname='" + partname + '\'' +
-                ", partimage='" + partimage + '\'' +
                 ", carmodel='" + carmodel + '\'' +
                 ", carbrand='" + carbrand + '\'' +
                 ", quantity=" + quantity +

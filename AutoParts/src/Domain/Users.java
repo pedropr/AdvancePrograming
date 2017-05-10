@@ -6,7 +6,7 @@ import javax.persistence.*;
  */
 @NamedQueries({
         @NamedQuery(name = "getAllUsers", query = "select u From Users u"),
-        @NamedQuery(name = "Authentication", query = "select u from Users u where u.username = :username and u.password = :password")
+        @NamedQuery(name = "Authenticatsion", query = "select u from Users u where u.username = :username and u.password = :password")
 })
 
 @Entity
@@ -16,6 +16,7 @@ public class Users {
     @GeneratedValue
     private int Id;
 
+    @Column(unique = true)
     private String username;
 
     private String password;

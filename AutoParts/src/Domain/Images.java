@@ -13,7 +13,35 @@ public class Images {
 
     private String path;
 
-    
-    private int autoId;
+    private int autoPartId;
+
+    public Images() {
+
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public int getAutoPart() {
+        return autoPartId;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public void setAutoPart(int autoPartId) {
+        this.autoPartId = autoPartId;
+    }
+
 
 }
