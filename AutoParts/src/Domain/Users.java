@@ -30,30 +30,59 @@ public class Users {
         this.password = password;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return Id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.Id = Id;
     }
 
+    /**
+     *
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,6 +96,10 @@ public class Users {
         return getPassword() != null ? getPassword().equals(user.getPassword()) : user.getPassword() == null;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int result = getId();
@@ -75,6 +108,10 @@ public class Users {
         return result;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "User{" +

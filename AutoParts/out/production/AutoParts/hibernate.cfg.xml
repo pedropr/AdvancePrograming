@@ -11,8 +11,6 @@
 
         <mapping class="Domain.AutoPart"/>
         <mapping class="Domain.Users"/>
-        <mapping class="Domain.Images"/>
-
 
 
         <!-- <property name="connection.username"/> -->

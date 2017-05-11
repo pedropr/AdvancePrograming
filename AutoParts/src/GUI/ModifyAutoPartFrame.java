@@ -5,17 +5,21 @@
  */
 package GUI;
 
+import Domain.AutoPart;
+
 /**
  *
  * @author RALP
  */
 public class ModifyAutoPartFrame extends javax.swing.JFrame {
-
+    private AutoPart part;
     /**
      * Creates new form ModifyAutoPartFrame
      */
-    public ModifyAutoPartFrame() {
+    public ModifyAutoPartFrame(AutoPart p) {
+
         initComponents();
+        this.part = part;
     }
 
     /**
@@ -216,7 +220,8 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModifyAutoPartFrame().setVisible(true);
+               AutoPart part = new AutoPart();
+                new ModifyAutoPartFrame(part).setVisible(true);
             }
         });
     }

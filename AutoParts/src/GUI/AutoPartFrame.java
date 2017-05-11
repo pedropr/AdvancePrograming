@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import Domain.AutoPart;
+
 /**
  *
  * @author RALP
@@ -116,7 +118,8 @@ public class AutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutPActionPerformed
 
     private void ModifyAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyAPActionPerformed
-ModifyAutoPartFrame modifyFrame = new ModifyAutoPartFrame();
+        //Get selected auto part, of search auto part.
+        ModifyAutoPartFrame modifyFrame = new ModifyAutoPartFrame(new AutoPart());
      
      modifyFrame.setVisible(true);
     }//GEN-LAST:event_ModifyAPActionPerformed
