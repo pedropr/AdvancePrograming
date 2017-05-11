@@ -76,7 +76,7 @@
       <file leaf-file-name="AutoPartFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/AutoPartFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="886">
+            <state relative-caret-position="1020">
               <caret line="173" column="53" lean-forward="false" selection-start-line="173" selection-start-column="53" selection-end-line="173" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -831,7 +831,7 @@
       <workItem from="1493902905998" duration="45000" />
       <workItem from="1493903003798" duration="9535000" />
       <workItem from="1494457709129" duration="6137000" />
-      <workItem from="1494507164077" duration="1631000" />
+      <workItem from="1494507164077" duration="2535000" />
     </task>
     <task id="LOCAL-00001" summary="Addiction default values to table for testing&#10;Creation of queries for users">
       <created>1493814001889</created>
@@ -844,7 +844,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25435000" />
+    <option name="totallyTimeSpent" value="26339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
@@ -1333,7 +1333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AutoPartFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
+        <state relative-caret-position="1020">
           <caret line="173" column="53" lean-forward="false" selection-start-line="173" selection-start-column="53" selection-end-line="173" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
