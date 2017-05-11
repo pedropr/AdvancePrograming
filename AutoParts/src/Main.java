@@ -1,6 +1,8 @@
 import Controllers.AutoPartServices;
+import Controllers.UsersServices;
 import Domain.AutoPart;
 import Domain.Users;
+import GUI.LoginFrame;
 import org.hibernate.HibernateException;
 import org.hibernate.Metamodel;
 import org.hibernate.query.Query;
@@ -8,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 
 import javax.persistence.metamodel.EntityType;
 
@@ -39,6 +42,8 @@ public class Main {
         final Session session = getSession();
         session.beginTransaction();
         try {
+            AutoPartServices autoPartServices = new AutoPartServices(session);
+            UsersServices usersServices = new UsersServices(session);
             /**
              * This testing park and population table, create default values
              */
@@ -53,12 +58,10 @@ public class Main {
             a.setQuantity(5);
             session.save(a);
 
+            LoginFrame startFrame = new LoginFrame();
 
-            users.setPassword("Hello World");
-            //(ArrayList<Users>) session.getNamedQuery("getAllUsers").list();
+        }catch (Exception e){
 
-        } finally {
-            session.close();
         }
     }
 }

@@ -18,23 +18,32 @@ import java.util.List;
  * Created by Pedro on 5/3/2017.
  */
 public class UsersServices {
+    public UsersServices(Session s){
+        session=s;
 
-    public static boolean authentication(Session session, String userName, String password) throws Exception {
+        System.out.println(session.isOpen());
+    }
+    private static Session session;
+
+    public static boolean authentication(String userName, String password){
+        System.out.println(session.isOpen());
         Query query = session.getNamedQuery("Authentication").setParameter("username", userName)
                 .setParameter("password", password);
         ArrayList<Users> results = (ArrayList<Users>) query.list();
-        if (results.isEmpty())
-            throw new Exception("Invalid Username or Password");
-        return true;
+        if(results.isEmpty()){
+            return false;
+        }else {
+            return true;
+        }
 
     }
 
-    public static boolean createUser(Session session, String userName, String password) throws Exception {
+    public static boolean createUser(String userName, String password) {
         session.save(new Users(userName, password));
         return true;
     }
 
-    public static boolean updateUser(Session session, String userName, String password) throws Exception {
+    public static boolean updateUser(String userName, String password) {
         Query query = session.getNamedQuery("Authentication").setParameter("username", userName)
                 .setParameter("password", password);
         ArrayList<Users> results = (ArrayList<Users>) query.list();

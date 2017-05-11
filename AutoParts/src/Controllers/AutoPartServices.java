@@ -19,30 +19,69 @@ import javax.persistence.metamodel.EntityType;
  * Created by PedroVega on 5/4/17.
  */
 public class AutoPartServices {
-    public static boolean createAutoParts(Session session, AutoPart autopart) throws Exception{
+    private static Session session;
+
+    /**
+     *
+     * @param s
+     */
+    public AutoPartServices(Session s){
+        session = s;
+    }
+
+    /**
+     *
+     * @param autopart
+     * @return
+     * @throws Exception
+     */
+    public static boolean createAutoParts(AutoPart autopart) throws Exception{
         session.save(autopart);
         return true;
 
     }
 
-    public static boolean updateAutoParts(Session session, AutoPart autopart) throws Exception{
+    /**
+     *
+     * @param autopart
+     * @return
+     * @throws Exception
+     */
+    public static boolean updateAutoParts(AutoPart autopart) throws Exception{
         session.update(autopart);
         return true;
     }
 
-    public static List<AutoPart> searchAutoParts(Session session, String name) throws Exception{
+    /**
+     *
+     * @param name
+     * @return
+     * @throws Exception
+     */
+    public static List<AutoPart> searchAutoParts(String name) throws Exception{
         Query query = session.getNamedQuery("searchAutoParts").setParameter("partname", name);
         ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
         return list;
     }
 
-    public static List<AutoPart> getAllAutoParts(Session session) throws Exception{
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
+    public static List<AutoPart> getAllAutoParts() throws Exception{
         Query query = session.getNamedQuery("getAllParts");
         ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
         return list;
     }
 
-    public static AutoPart getAutoPartById(Session session, int id) throws Exception {
+    /**
+     *
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    public static AutoPart getAutoPartById(int id) throws Exception {
         return null;
     }
 

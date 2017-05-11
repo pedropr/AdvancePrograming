@@ -22,6 +22,8 @@ public class AutoPart {
     @Column(unique = true)
     private String partno;
 
+    private String images;
+
     private String partname;
 
     private String carmodel;
@@ -38,7 +40,17 @@ public class AutoPart {
 
     }
 
-    public AutoPart(String partno, String partname, String carmodel, String carbrand, Integer quantity, Double partcost, Double partprice) {
+    /**
+     *
+     * @param partno
+     * @param partname
+     * @param carmodel
+     * @param carbrand
+     * @param quantity
+     * @param partcost
+     * @param partprice
+     */
+    public AutoPart(String partno, String partname, String carmodel, String carbrand, Integer quantity, Double partcost, Double partprice, String images) {
         this.partno = partno;
         this.partname = partname;
         this.carmodel = carmodel;
@@ -46,78 +58,140 @@ public class AutoPart {
         this.quantity = quantity;
         this.partcost = partcost;
         this.partprice = partprice;
+        this.images = images;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "PARTNO")
     public String getPartno() {
         return partno;
     }
 
+    /**
+     *
+     * @param partno
+     */
     public void setPartno(String partno) {
         this.partno = partno;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "PARTNAME")
     public String getPartname() {
         return partname;
     }
 
+    /**
+     *
+     * @param partname
+     */
     public void setPartname(String partname) {
         this.partname = partname;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "CARMODEL")
     public String getCarmodel() {
         return carmodel;
     }
 
+    /**
+     *
+     * @param carmodel
+     */
     public void setCarmodel(String carmodel) {
         this.carmodel = carmodel;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "CARBRAND")
     public String getCarbrand() {
         return carbrand;
     }
 
+    /**
+     *
+     * @param carbrand
+     */
     public void setCarbrand(String carbrand) {
         this.carbrand = carbrand;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "QUANTITY")
     public Integer getQuantity() {
         return quantity;
     }
 
+    /**
+     *
+     * @param quantity
+     */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "PARTCOST")
     public Double getPartcost() {
         return partcost;
     }
 
+    /**
+     *
+     * @param partcost
+     */
     public void setPartcost(Double partcost) {
         this.partcost = partcost;
     }
 
+    /**
+     *
+     * @return
+     */
     @Basic
     @Column(name = "PARTPRICE")
     public Double getPartprice() {
         return partprice;
     }
 
+    /**
+     *
+     * @param partprice
+     */
     public void setPartprice(Double partprice) {
         this.partprice = partprice;
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -136,6 +210,10 @@ public class AutoPart {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int result = partno != null ? partno.hashCode() : 0;
@@ -148,6 +226,10 @@ public class AutoPart {
         return result;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "AutoPart{" +

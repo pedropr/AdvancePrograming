@@ -5,6 +5,12 @@
  */
 package GUI;
 
+import Controllers.UsersServices;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author RALP
@@ -15,7 +21,21 @@ public class LoginFrame extends javax.swing.JFrame {
      * Creates new form Login
      */
     public LoginFrame() {
+        super("Login");
         initComponents();
+        setVisible(true);
+        LoginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String username = UsernameTextField.getText();
+                String password = PaswordTextField.getText();
+                if(UsersServices.authentication(username, password)){
+                    AutoPartFrame frame = new AutoPartFrame();
+                }else{
+                    JOptionPane.showMessageDialog(UsernamejLabel, "Invalid Username or Password", "Authentication", JOptionPane.ERROR_MESSAGE);
+                };
+            }
+        });
     }
 
     /**
@@ -130,6 +150,7 @@ System.exit(0);
                 new LoginFrame().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
