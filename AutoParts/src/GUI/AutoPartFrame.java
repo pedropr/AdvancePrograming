@@ -16,8 +16,13 @@ public class AutoPartFrame extends javax.swing.JFrame {
     /**
      * Creates new form AutoPartFrame
      */
+
+    private static AddAutoPartFrame addAutoFrame;
+
     public AutoPartFrame() {
+        super("AutoParts");
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -108,9 +113,9 @@ public class AutoPartFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddAPActionPerformed
-     AddAutoPartFrame addautoFrame = new AddAutoPartFrame();
-     
-     addautoFrame.setVisible(true);
+        addAutoFrame = new AddAutoPartFrame();
+
+        addAutoFrame.setVisible(true);
     }//GEN-LAST:event_AddAPActionPerformed
 
     private void AboutPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutPActionPerformed
@@ -119,6 +124,7 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
     private void ModifyAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyAPActionPerformed
         //Get selected auto part, of search auto part.
+
         ModifyAutoPartFrame modifyFrame = new ModifyAutoPartFrame(new AutoPart());
      
      modifyFrame.setVisible(true);

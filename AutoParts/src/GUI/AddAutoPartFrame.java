@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author RALP
@@ -14,6 +17,9 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
     /**
      * Creates new form AddAutoPartFrame
      */
+    
+    private final JFileChooser fc = new JFileChooser();
+    
     public AddAutoPartFrame() {
         initComponents();
     }
@@ -46,6 +52,7 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
         PriceTextField = new javax.swing.JTextField();
         SaveButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +104,13 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,30 +126,33 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Label1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(PartNum)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                                    .addComponent(PartNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(PartNameLabel)
-                                        .addComponent(PartImgjLabel)
-                                        .addComponent(CarModeljLabel)
-                                        .addComponent(CarBrandjLabel)
-                                        .addComponent(QuantityjLabel)
-                                        .addComponent(CostjLabel)
-                                        .addComponent(PricejLabel))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(PartNameTextField)
-                                        .addComponent(PartImgTextField)
-                                        .addComponent(CarModelTextField)
-                                        .addComponent(CarBrandTextField)
-                                        .addComponent(QuantityTextField)
-                                        .addComponent(CostTextField)
-                                        .addComponent(PriceTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(PartNum)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                        .addComponent(PartNumTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(PartNameLabel)
+                                            .addComponent(PartImgjLabel)
+                                            .addComponent(CarModeljLabel)
+                                            .addComponent(CarBrandjLabel)
+                                            .addComponent(QuantityjLabel)
+                                            .addComponent(CostjLabel)
+                                            .addComponent(PricejLabel))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(PartNameTextField)
+                                            .addComponent(PartImgTextField)
+                                            .addComponent(CarModelTextField)
+                                            .addComponent(CarBrandTextField)
+                                            .addComponent(QuantityTextField)
+                                            .addComponent(CostTextField)
+                                            .addComponent(PriceTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +170,8 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PartImgjLabel)
-                    .addComponent(PartImgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PartImgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CarModeljLabel)
@@ -178,7 +196,7 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaveButton)
                     .addComponent(CancelButton))
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,6 +217,20 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
 System.exit(0);
     }//GEN-LAST:event_CancelButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        int returnVal = fc.showOpenDialog(this);
+        
+        if (returnVal == JFileChooser.APPROVE_OPTION){
+            File file = fc.getSelectedFile();
+            PartImgTextField.setText(file.getPath());
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,5 +287,6 @@ System.exit(0);
     private javax.swing.JTextField QuantityTextField;
     private javax.swing.JLabel QuantityjLabel;
     private javax.swing.JButton SaveButton;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
