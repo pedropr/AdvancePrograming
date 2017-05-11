@@ -21,12 +21,12 @@ public class UsersServices {
     public UsersServices(Session s){
         session=s;
 
-        System.out.println(session.isOpen());
+        //System.out.println(session.isOpen());
     }
     private static Session session;
 
     public static boolean authentication(String userName, String password){
-        System.out.println(session.isOpen());
+        //System.out.println(session.isOpen());
         Query query = session.getNamedQuery("Authentication").setParameter("username", userName)
                 .setParameter("password", password);
         ArrayList<Users> results = (ArrayList<Users>) query.list();

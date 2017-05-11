@@ -31,11 +31,14 @@ public class LoginFrame extends javax.swing.JFrame {
                 String password = PaswordTextField.getText();
                 if(UsersServices.authentication(username, password)){
                     AutoPartFrame frame = new AutoPartFrame();
+                    LoginFrame.super.dispose();
+
                 }else{
                     JOptionPane.showMessageDialog(UsernamejLabel, "Invalid Username or Password", "Authentication", JOptionPane.ERROR_MESSAGE);
                 };
             }
         });
+
     }
 
     /**
@@ -50,7 +53,7 @@ public class LoginFrame extends javax.swing.JFrame {
         UsernamejLabel = new javax.swing.JLabel();
         PaswordjLabel = new javax.swing.JLabel();
         UsernameTextField = new javax.swing.JTextField();
-        PaswordTextField = new javax.swing.JTextField();
+        PaswordTextField = new javax.swing.JPasswordField();
         LoginButton = new javax.swing.JButton();
         LoginCancelButton = new javax.swing.JButton();
 
@@ -156,7 +159,7 @@ System.exit(0);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LoginButton;
     private javax.swing.JButton LoginCancelButton;
-    private javax.swing.JTextField PaswordTextField;
+    private javax.swing.JPasswordField PaswordTextField;
     private javax.swing.JLabel PaswordjLabel;
     private javax.swing.JTextField UsernameTextField;
     private javax.swing.JLabel UsernamejLabel;
