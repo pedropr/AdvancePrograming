@@ -215,7 +215,7 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_CostTextFieldActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
-System.exit(0);
+        super.dispose();
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -7,6 +7,8 @@ package GUI;
 
 import Domain.AutoPart;
 
+import javax.swing.*;
+
 /**
  *
  * @author RALP
@@ -18,6 +20,8 @@ public class AutoPartFrame extends javax.swing.JFrame {
      */
 
     private static AddAutoPartFrame addAutoFrame;
+    private static ModifyAutoPartFrame modifyFrame;
+    //We need to create about frame and help frame
 
     public AutoPartFrame() {
         super("AutoParts");
@@ -124,10 +128,8 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
     private void ModifyAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyAPActionPerformed
         //Get selected auto part, of search auto part.
-
-        ModifyAutoPartFrame modifyFrame = new ModifyAutoPartFrame(new AutoPart());
-     
-     modifyFrame.setVisible(true);
+        modifyFrame = new ModifyAutoPartFrame(new AutoPart());
+        modifyFrame.setVisible(true);
     }//GEN-LAST:event_ModifyAPActionPerformed
 
     private void QuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitActionPerformed
