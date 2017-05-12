@@ -33,9 +33,9 @@ public class AutoPartServices {
      *
      * @param autopart
      * @return
-     * @throws Exception
+
      */
-    public static boolean createAutoParts(AutoPart autopart) throws Exception{
+    public static boolean createAutoParts(AutoPart autopart) {
         session.save(autopart);
         return true;
 
@@ -45,9 +45,8 @@ public class AutoPartServices {
      *
      * @param autopart
      * @return
-     * @throws Exception
      */
-    public static boolean updateAutoParts(AutoPart autopart) throws Exception{
+    public static boolean updateAutoParts(AutoPart autopart) {
         session.update(autopart);
         return true;
     }
@@ -56,9 +55,8 @@ public class AutoPartServices {
      *
      * @param name
      * @return
-     * @throws Exception
-     */
-    public static List<AutoPart> searchAutoParts(String name) throws Exception{
+     * */
+    public static List<AutoPart> searchAutoParts(String name){
         Query query = session.getNamedQuery("searchAutoParts").setParameter("partname", name);
         ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
         return list;
@@ -67,9 +65,8 @@ public class AutoPartServices {
     /**
      *
      * @return
-     * @throws Exception
      */
-    public static List<AutoPart> getAllAutoParts() throws Exception{
+    public static List<AutoPart> getAllAutoParts(){
         Query query = session.getNamedQuery("getAllParts");
         ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
         return list;
@@ -79,7 +76,6 @@ public class AutoPartServices {
      *
      * @param id
      * @return
-     * @throws Exception
      */
     public static AutoPart getAutoPartById(int id) throws Exception {
         return null;

@@ -5,8 +5,13 @@
  */
 package GUI;
 
+import Controllers.AutoPartServices;
+import Domain.AutoPart;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
-import javax.swing.JFileChooser;
+import javax.swing.*;
 
 /**
  *
@@ -19,9 +24,67 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
      */
     
     private final JFileChooser fc = new JFileChooser();
-    
-    public AddAutoPartFrame() {
+    private javax.swing.JButton CancelButton;
+    private javax.swing.JTextField CarBrandTextField;
+    private javax.swing.JLabel CarBrandjLabel;
+    private javax.swing.JTextField CarModelTextField;
+    private javax.swing.JLabel CarModeljLabel;
+    private javax.swing.JTextField CostTextField;
+    private javax.swing.JLabel CostjLabel;
+    private javax.swing.JLabel Label1;
+    private javax.swing.JTextField PartImgTextField;
+    private javax.swing.JLabel PartImgjLabel;
+    private javax.swing.JLabel PartNameLabel;
+    private javax.swing.JTextField PartNameTextField;
+    private javax.swing.JLabel PartNum;
+    private javax.swing.JTextField PartNumTextField;
+    private javax.swing.JTextField PriceTextField;
+    private javax.swing.JLabel PricejLabel;
+    private javax.swing.JTextField QuantityTextField;
+    private javax.swing.JLabel QuantityjLabel;
+    private javax.swing.JButton SaveButton;
+    private javax.swing.JButton jButton1;
+
+    public AddAutoPartFrame(){
+        super("Add AutoPart");
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        SaveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AutoPart a;
+                try{
+
+                    if(CarBrandTextField.getText().isEmpty() || CarModelTextField.getText().isEmpty()
+                        || CostTextField.getText().isEmpty() || PartImgTextField.getText().isEmpty()
+                        || PartNameTextField.getText().isEmpty() ||  PartNumTextField.getText().isEmpty()
+                        || PriceTextField.getText().isEmpty() || QuantityTextField.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(SaveButton, "Empty Textbox", "Error", JOptionPane.ERROR_MESSAGE);
+                }else {
+                        String brand = CarBrandTextField.getText();
+                        String model = CarModelTextField.getText();
+                        Double cost = Double.parseDouble(CostTextField.getText());
+                        String img = PartImgTextField.getText();
+                        String name = PartNameTextField.getText();
+                        String number =PartNumTextField.getText();
+                        Double price = Double.parseDouble(PriceTextField.getText());
+                        int quantity = Integer.parseInt(QuantityTextField.getText());
+
+                       a = new AutoPart(number, name, model, brand, quantity, cost, price, img);
+                        AutoPartServices.createAutoParts(a);
+
+                        AutoPartFrame.update();
+                        AddAutoPartFrame.super.dispose();
+
+
+
+                    }
+                } catch (Exception e1) {
+                        JOptionPane.showMessageDialog(SaveButton, "Part Price, Part Cost and Quantiy most be a number", "Error: Invalid Input", JOptionPane.ERROR_MESSAGE);
+                }
+
+            }
+        });
     }
 
     /**
@@ -268,25 +331,6 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelButton;
-    private javax.swing.JTextField CarBrandTextField;
-    private javax.swing.JLabel CarBrandjLabel;
-    private javax.swing.JTextField CarModelTextField;
-    private javax.swing.JLabel CarModeljLabel;
-    private javax.swing.JTextField CostTextField;
-    private javax.swing.JLabel CostjLabel;
-    private javax.swing.JLabel Label1;
-    private javax.swing.JTextField PartImgTextField;
-    private javax.swing.JLabel PartImgjLabel;
-    private javax.swing.JLabel PartNameLabel;
-    private javax.swing.JTextField PartNameTextField;
-    private javax.swing.JLabel PartNum;
-    private javax.swing.JTextField PartNumTextField;
-    private javax.swing.JTextField PriceTextField;
-    private javax.swing.JLabel PricejLabel;
-    private javax.swing.JTextField QuantityTextField;
-    private javax.swing.JLabel QuantityjLabel;
-    private javax.swing.JButton SaveButton;
-    private javax.swing.JButton jButton1;
+
     // End of variables declaration//GEN-END:variables
 }
