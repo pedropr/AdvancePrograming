@@ -251,20 +251,14 @@ System.exit(0);
     private void addAutoPartToTable(ArrayList<AutoPart> list){
         model.setRowCount(0);
         for(AutoPart a : list) {
-            Object[] o  = new Object[8];
-
-            //Need to replace with image location.
-            BufferedImage img = null;
-            ImageIcon icon = new ImageIcon("Images/image.png");
-            System.out.println(icon);
-            o[0] = icon;
-            o[1] = a.getPartno();
-            o[2] = a.getPartname();
-            o[3] = a.getCarmodel();
-            o[4] = a.getCarbrand();
-            o[5] = a.getQuantity().toString();
-            o[6] = a.getPartcost().toString();
-            o[7] = a.getPartprice().toString();
+            Object[] o  = new Object[7];
+            o[0] = a.getPartno();
+            o[1] = a.getPartname();
+            o[2] = a.getCarmodel();
+            o[3] = a.getCarbrand();
+            o[4] = a.getQuantity().toString();
+            o[5] = a.getPartcost().toString();
+            o[6] = a.getPartprice().toString();
             model.addRow(o);
 
 
