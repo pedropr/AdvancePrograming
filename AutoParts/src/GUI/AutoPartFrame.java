@@ -30,13 +30,19 @@ import java.*;
 public class AutoPartFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form AutoPartFrame
+     * Frame that will static to prevent multiple frame to be open
      */
 
     private static AddAutoPartFrame addAutoFrame;
     private static ModifyAutoPartFrame modifyFrame;
-    //We need to create about frame and help frame
+    private static AboutFrame aboutFrame;
+    private static HelpFrame helpFrame;
+    private static DisplayFrame displayFrame;
 
+
+    /**
+     *
+     */
     public AutoPartFrame() {
         super("AutoParts");
         initComponents();
@@ -53,6 +59,29 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
             }
         });
+
+        HelpC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                helpFrame = new HelpFrame();
+                helpFrame.setVisible(true);
+            }
+        });
+        DisplayAP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int i = SearchjTable.getSelectedRow();
+                    String temp =  SearchjTable.getValueAt(i,0).toString();
+                    AutoPart a = AutoPartServices.searchAutoParts(temp).get(0);
+                    displayFrame = new DisplayFrame(a);
+
+                } catch (Exception e2) {
+                    JOptionPane.showMessageDialog(SearchjTable, "No selected autopart", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+
 
 
 
@@ -108,7 +137,7 @@ public class AutoPartFrame extends javax.swing.JFrame {
         AboutP = new javax.swing.JMenuItem();
 
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         SearchjTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(SearchjTable);
@@ -135,6 +164,8 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
         DisplayAP.setText("Display Auto Part");
         jMenu1.add(DisplayAP);
+        Search.setText("Search");
+        jMenu1.add(Search);
 
         APReport.setText("Auto Part Report");
         jMenu1.add(APReport);
@@ -199,13 +230,27 @@ public class AutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_AddAPActionPerformed
 
     private void AboutPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutPActionPerformed
-        // TODO add your handling code here:
+            aboutFrame = new AboutFrame();
+            aboutFrame.setVisible(true);
+
     }//GEN-LAST:event_AboutPActionPerformed
 
     private void ModifyAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyAPActionPerformed
         //Get selected auto part, of search auto part.
-        modifyFrame = new ModifyAutoPartFrame(new AutoPart());
-        modifyFrame.setVisible(true);
+        //try {
+
+            String partNo = JOptionPane.showInputDialog(ResetjButton,"Part No: ");
+            ArrayList<AutoPart> result =(ArrayList<AutoPart>) AutoPartServices.searchAutoParts(partNo);
+            //System.out.println(result);
+            if(result.isEmpty()){
+                JOptionPane.showMessageDialog(APReport, "No part # found", "Error", JOptionPane.ERROR_MESSAGE);
+            }else {
+                modifyFrame = new ModifyAutoPartFrame(result.get(0));
+                modifyFrame.setVisible(true);
+            }
+        //}catch (Exception e){
+            //JOptionPane.showMessageDialog(APReport, e, "Error", JOptionPane.ERROR_MESSAGE);
+        //}
     }//GEN-LAST:event_ModifyAPActionPerformed
 
     private void QuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitActionPerformed
@@ -250,6 +295,7 @@ System.exit(0);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem APReport;
     private javax.swing.JMenuItem AboutP;
+    private javax.swing.JMenuItem Search = new JMenuItem();
     private javax.swing.JMenuItem AddAP;
     private javax.swing.JMenuItem DisplayAP;
     private javax.swing.JMenuItem HelpC;

@@ -56,8 +56,8 @@ public class AutoPartServices {
      * @param name
      * @return
      * */
-    public static List<AutoPart> searchAutoParts(String name){
-        Query query = session.getNamedQuery("searchAutoParts").setParameter("partname", name);
+    public static List<AutoPart> searchAutoParts(String partno){
+        Query query = session.getNamedQuery("searchAutoParts").setParameter("partno", partno);
         ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
         return list;
     }
@@ -72,14 +72,6 @@ public class AutoPartServices {
         return list;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
-    public static AutoPart getAutoPartById(int id) throws Exception {
-        return null;
-    }
 
 
 }
