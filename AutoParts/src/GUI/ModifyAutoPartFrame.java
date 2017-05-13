@@ -70,7 +70,7 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
 
                 if (returnVal == JFileChooser.APPROVE_OPTION){
                     File file = fc.getSelectedFile();
-                    PartImgTextField.setText(file.getPath());
+                    ModPartImgTextField.setText(file.getPath());
 
                 }
             }
@@ -265,7 +265,7 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ModPartImgTextFieldActionPerformed
 
     private void ModCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModCancelButtonActionPerformed
-        System.exit(0);
+        super.dispose();
     }//GEN-LAST:event_ModCancelButtonActionPerformed
 
     private void AddimgjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddimgjButtonActionPerformed
