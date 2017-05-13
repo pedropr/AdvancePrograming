@@ -3,7 +3,7 @@ package Domain;
 import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = "getAllParts", query = "select p From AutoPart p"),
-        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partname = :partname")
+        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partno = :partno")
 
 })
 
@@ -58,6 +58,30 @@ public class AutoPart {
         this.quantity = quantity;
         this.partcost = partcost;
         this.partprice = partprice;
+        this.images = images;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getImages() {
+        return images;
+    }
+
+    /**
+     *
+     * @param images
+     */
+    public void setImages(String images) {
         this.images = images;
     }
 

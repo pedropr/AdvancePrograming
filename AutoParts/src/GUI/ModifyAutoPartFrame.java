@@ -5,7 +5,12 @@
  */
 package GUI;
 
+import Controllers.AutoPartServices;
 import Domain.AutoPart;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -17,9 +22,46 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
      * Creates new form ModifyAutoPartFrame
      */
     public ModifyAutoPartFrame(AutoPart p) {
-
+        //System.out.println(p);
         initComponents();
-        this.part = part;
+
+        SearchLabel.setVisible(false);
+        SearchTextField.setVisible(false);
+
+        this.part = p;
+        ModCarBrandTextField.setText(part.getCarbrand());
+        ModCarModelTextField.setText(part.getCarmodel());
+        ModPartImgTextField.setText(part.getImages());
+        ModCostTextField.setText(part.getPartcost().toString());
+        ModPriceTextField.setText(part.getPartprice().toString());
+        ModPartNameTextField.setText(part.getPartname());
+        ModQuantityTextField.setText(part.getQuantity().toString());
+
+        ModSaveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                part.setCarbrand(ModCarBrandTextField.getText());
+                part.setCarmodel(ModCarModelTextField.getText());
+                part.setImages(ModPartImgTextField.getText());
+                part.setPartcost(Double.parseDouble(ModPriceTextField.getText()));
+                part.setPartprice(Double.parseDouble(ModCostTextField.getText()));
+                part.setPartname(ModPartNameTextField.getText());
+                part.setQuantity(Integer.parseInt(ModQuantityTextField.getText()));
+                AutoPartServices.updateAutoParts(part);
+
+                ModifyAutoPartFrame.super.dispose();
+
+
+            }
+        }
+    );
+
+
+    }
+
+    public ModifyAutoPartFrame(){
+        initComponents();
     }
 
     /**
@@ -30,7 +72,6 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         SearchLabel = new javax.swing.JLabel();
         SearchTextField = new javax.swing.JTextField();
         ModPartNameLabel = new javax.swing.JLabel();
@@ -50,7 +91,9 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         ModSaveButton = new javax.swing.JButton();
         ModCancelButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         SearchLabel.setText("Search Part No. :");
 
@@ -220,8 +263,8 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               AutoPart part = new AutoPart();
-                new ModifyAutoPartFrame(part).setVisible(true);
+               //AutoPart part = new AutoPart();
+                new ModifyAutoPartFrame().setVisible(true);
             }
         });
     }

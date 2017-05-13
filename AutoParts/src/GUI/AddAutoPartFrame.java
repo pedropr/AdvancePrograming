@@ -76,8 +76,6 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                         AutoPartFrame.update();
                         AddAutoPartFrame.super.dispose();
 
-
-
                     }
                 } catch (Exception e1) {
                         JOptionPane.showMessageDialog(SaveButton, "Part Price, Part Cost and Quantiy most be a number", "Error: Invalid Input", JOptionPane.ERROR_MESSAGE);
