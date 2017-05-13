@@ -3,7 +3,7 @@ package Domain;
 import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = "getAllParts", query = "select p From AutoPart p"),
-        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partno = :partno")
+        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partno like :partno")
 
 })
 
