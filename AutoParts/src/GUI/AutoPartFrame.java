@@ -37,6 +37,7 @@ public class AutoPartFrame extends javax.swing.JFrame {
     private static ModifyAutoPartFrame modifyFrame;
     private static AboutFrame aboutFrame;
     private static HelpFrame helpFrame;
+    private static DisplayFrame displayFrame;
 
 
     /**
@@ -64,6 +65,20 @@ public class AutoPartFrame extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) {
                 helpFrame = new HelpFrame();
                 helpFrame.setVisible(true);
+            }
+        });
+        DisplayAP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    int i = SearchjTable.getSelectedRow();
+                    String temp =  SearchjTable.getValueAt(i,0).toString();
+                    AutoPart a = AutoPartServices.searchAutoParts(temp).get(0);
+                    displayFrame = new DisplayFrame(a);
+
+                } catch (Exception e2) {
+                    JOptionPane.showMessageDialog(SearchjTable, "No selected autopart", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
