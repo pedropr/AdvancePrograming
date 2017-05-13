@@ -10,6 +10,8 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Pedro.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/AboutFrame.form" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/AboutFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/DisplayFrame.form" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/DisplayFrame.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/HelpFrame.form" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/HelpFrame.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Main.java" />
@@ -41,8 +43,8 @@
             <file leaf-file-name="AutoPart.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/Domain/AutoPart.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1785">
-                    <caret line="148" column="18" lean-forward="false" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
+                  <state relative-caret-position="459">
+                    <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
                     <folding>
                       <element signature="e#1401#1402#0" expanded="true" />
                       <element signature="e#1426#1427#0" expanded="true" />
@@ -63,58 +65,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AutoPartFrame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AutoPartFrame.java">
+      <file leaf-file-name="DisplayFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/DisplayFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="65" column="41" lean-forward="false" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+            <state relative-caret-position="230">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="n#!!doc;n#initComponents#0;n#AutoPartFrame#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AboutFrame.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AboutFrame.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddAutoPartFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AddAutoPartFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelpFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/HelpFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AboutFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/AboutFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelpFrame.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/HelpFrame.form">
+      <file leaf-file-name="DisplayFrame.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/DisplayFrame.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
           </provider>
@@ -164,6 +128,8 @@
         <option value="$PROJECT_DIR$/src/GUI/AboutFrame.java" />
         <option value="$PROJECT_DIR$/src/GUI/HelpFrame.java" />
         <option value="$PROJECT_DIR$/src/GUI/AutoPartFrame.java" />
+        <option value="$PROJECT_DIR$/src/GUI/DisplayFrame.form" />
+        <option value="$PROJECT_DIR$/src/GUI/DisplayFrame.java" />
       </list>
     </option>
   </component>
@@ -885,7 +851,7 @@
       <workItem from="1494614705930" duration="9709000" />
       <workItem from="1494626935353" duration="3265000" />
       <workItem from="1494632095079" duration="312000" />
-      <workItem from="1494688885231" duration="6770000" />
+      <workItem from="1494688885231" duration="7878000" />
     </task>
     <task id="LOCAL-00001" summary="Addiction default values to table for testing&#10;Creation of queries for users">
       <created>1493814001889</created>
@@ -898,11 +864,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49199000" />
+    <option name="totallyTimeSpent" value="50307000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -926,7 +891,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1546875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1546875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1000,21 +965,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controllers/UsersServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -1278,21 +1228,6 @@
     <entry file="file://$PROJECT_DIR$/src/Images/image.png" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/javax/swing/table/DefaultTableColumnModel.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/javax/swing/JTable.java" />
-    <entry file="file://$PROJECT_DIR$/src/Domain/AutoPart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="148" column="18" lean-forward="false" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="18" />
-          <folding>
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
-            <element signature="e#1526#1527#0" expanded="true" />
-            <element signature="e#1614#1615#0" expanded="true" />
-            <element signature="e#1650#1651#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/AutoPartServices.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="689">
@@ -1313,11 +1248,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/AutoPartFrame.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/AboutFrame.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
@@ -1358,6 +1288,41 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="n#!!doc;n#initComponents#0;n#AutoPartFrame#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/AutoPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding>
+            <element signature="e#1401#1402#0" expanded="true" />
+            <element signature="e#1426#1427#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1526#1527#0" expanded="true" />
+            <element signature="e#1614#1615#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/AboutFrame.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DisplayFrame.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DisplayFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
