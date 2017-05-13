@@ -1,8 +1,8 @@
 ----------------------------------------------------------------
-Sat May 13 16:55:47 EDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-0398-8af2-000006137ac0 
-on database directory C:\Users\Pedro\Documents\GitHub\AdvancePrograming\AutoParts\AutoParts with class loader sun.misc.Launcher$AppClassLoader@4e25154f 
-Loaded from file:/C:/Users/Pedro/Documents/GitHub/AdvancePrograming/AutoParts/out/artifacts/AutoParts_jar/AutoParts.jar
+Sat May 13 19:07:27 EDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-0411-142c-00000891c558 
+on database directory C:\Users\Pedro\Documents\GitHub\AdvancePrograming\AutoParts\AutoParts with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/Pedro/Documents/GitHub/AdvancePrograming/AutoParts/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_121-b13
 user.dir=C:\Users\Pedro\Documents\GitHub\AdvancePrograming\AutoParts

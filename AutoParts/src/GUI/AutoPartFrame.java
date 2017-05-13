@@ -89,7 +89,7 @@ public class AutoPartFrame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String partNo = JOptionPane.showInputDialog(SearchjTable,"Part No: ");
-                ArrayList<AutoPart> result =(ArrayList<AutoPart>) AutoPartServices.searchAutoParts(partNo);
+                ArrayList<AutoPart> result =(ArrayList<AutoPart>) AutoPartServices.searchLikeAutoParts(partNo);
                 //System.out.println(result);
                 if(result.isEmpty()){
                     JOptionPane.showMessageDialog(SearchjTable, "No part # found", "Error", JOptionPane.ERROR_MESSAGE);
@@ -253,20 +253,15 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
     private void ModifyAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyAPActionPerformed
         //Get selected auto part, of search auto part.
-        //try {
-
-            String partNo = JOptionPane.showInputDialog(ResetjButton,"Part No: ");
-            ArrayList<AutoPart> result =(ArrayList<AutoPart>) AutoPartServices.searchAutoParts(partNo);
-            //System.out.println(result);
-            if(result.isEmpty()){
-                JOptionPane.showMessageDialog(SearchjTable, "No part # found", "Error", JOptionPane.ERROR_MESSAGE);
-            }else {
-                modifyFrame = new ModifyAutoPartFrame(result.get(0));
-                modifyFrame.setVisible(true);
-            }
-        //}catch (Exception e){
-            //JOptionPane.showMessageDialog(APReport, e, "Error", JOptionPane.ERROR_MESSAGE);
-        //}
+        try {
+            int i = SearchjTable.getSelectedRow();
+            String temp =  SearchjTable.getValueAt(i,0).toString();
+            AutoPart a = AutoPartServices.searchAutoParts(temp).get(0);
+            modifyFrame = new ModifyAutoPartFrame(a);
+            modifyFrame.setVisible(true);
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(SearchjTable, "No select Auto Part", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_ModifyAPActionPerformed
 
     private void QuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitActionPerformed
