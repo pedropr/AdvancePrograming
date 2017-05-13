@@ -43,37 +43,10 @@ public class DisplayFrame extends JFrame {
         try {
             image = autoPart.getImages();
             Image.setIcon(new ImageIcon(image));
+            //Image.setText("Image not found");
         }catch (Exception e){
             Image.setText("Image not found");
         }
 
-    }
-    protected void updateLabel(String name) {
-        ImageIcon icon = createImageIcon("C:\\Users\\xerof_000\\Pictures\\tmspictures\\" + name + ".jpg");
-        if(icon != null){
-            Image img = icon.getImage();
-            Image newimg = img.getScaledInstance(lbl_pic.getWidth(), lbl_pic.getHeight(),  java.awt.Image.SCALE_SMOOTH);
-            icon = new ImageIcon(newimg);
-            lbl_pic.setIcon(icon);
-            lbl_pic.setText(null);
-        }
-        else{
-            lbl_pic.setText("Image not found");
-            lbl_pic.setIcon(null);
-        }
-    }
-
-
-
-
-
-    protected static ImageIcon createImageIcon(String path) {
-        URL imgURL;
-        imgURL = NowShowing.class.getResource(path);
-        if (imgURL != null) {
-            return new ImageIcon(imgURL);
-        } else {
-            return null;
-        }
     }
 }
