@@ -23,7 +23,7 @@ public class AutoPartServices {
 
     /**
      *
-     * @param s
+     * @param
      */
     public static void closeSession(){
         session.close();
@@ -56,11 +56,22 @@ public class AutoPartServices {
 
     /**
      *
-     * @param name
+     * @param partno
      * @return
      * */
     public static List<AutoPart> searchAutoParts(String partno){
         Query query = session.getNamedQuery("searchAutoParts").setParameter("partno", partno);
+        ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
+        return list;
+    }
+
+    /**
+     *
+     * @param partno
+     * @return
+     */
+    public static List<AutoPart> searchLikeAutoParts(String partno){
+        Query query = session.getNamedQuery("searchAutoParts").setParameter("partno", "%"+partno+"%");
         ArrayList<AutoPart> list =(ArrayList<AutoPart>)query.list();
         return list;
     }
