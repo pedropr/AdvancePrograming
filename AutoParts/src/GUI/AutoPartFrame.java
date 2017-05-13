@@ -59,6 +59,14 @@ public class AutoPartFrame extends javax.swing.JFrame {
             }
         });
 
+        HelpC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                helpFrame = new HelpFrame();
+                helpFrame.setVisible(true);
+            }
+        });
+
 
 
 
@@ -207,7 +215,9 @@ public class AutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_AddAPActionPerformed
 
     private void AboutPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutPActionPerformed
-        // TODO add your handling code here:
+            aboutFrame = new AboutFrame();
+            aboutFrame.setVisible(true);
+
     }//GEN-LAST:event_AboutPActionPerformed
 
     private void ModifyAPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyAPActionPerformed

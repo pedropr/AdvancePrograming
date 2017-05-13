@@ -19,6 +19,7 @@ public class HelpFrame extends javax.swing.JFrame {
      */
     public HelpFrame() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
