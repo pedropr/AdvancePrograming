@@ -3,6 +3,8 @@ package GUI;
 import Domain.AutoPart;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 
 /**
@@ -23,7 +25,7 @@ public class DisplayFrame extends JFrame {
 
     public DisplayFrame(AutoPart a){
         super("AutoPart - " + a.getPartno());
-        setSize(500,500);
+        setSize(500,540);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         add(MainFrame);
         autoPart = a;
@@ -42,11 +44,24 @@ public class DisplayFrame extends JFrame {
         Price.setText("Price: $" + autoPart.getPartprice());
         try {
             image = autoPart.getImages();
-            Image.setIcon(new ImageIcon(image));
-            //Image.setText("Image not found");
+
+
+            Image.setIcon(new ImageIcon(getScaledImage(new ImageIcon(image).getImage(),280,400)));
+            Image.setText("Image not found");
         }catch (Exception e){
             Image.setText("Image not found");
         }
 
+
+    }
+    private Image getScaledImage(Image srcImg, int w, int h){
+        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = resizedImg.createGraphics();
+
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.drawImage(srcImg, 0, 0, w, h, null);
+        g2.dispose();
+
+        return resizedImg;
     }
 }

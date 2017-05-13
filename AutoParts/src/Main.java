@@ -57,11 +57,11 @@ public class Main {
             a.setPartprice(300.00);
             a.setQuantity(5);
             session.save(a);
-            a = new AutoPart("333", "Bomp", "3bx", "Lexus", 5, 45.99, 90.99, "gif.jpg");
+            a = new AutoPart("333", "Bomp", "3bx", "Lexus", 5, 45.99, 90.99, "Images/image.jpg");
             session.save(a);
-            a = new AutoPart("332", "Bomp", "4bx", "Lexus", 5, 45.99, 90.99, "gif.jpg");
+            a = new AutoPart("332", "Bomp", "4bx", "Lexus", 5, 45.99, 90.99, "Images/image.jpg");
             session.save(a);
-            a = new AutoPart("330", "Bomp", "3bx", "Lexus", 5, 45.99, 90.99, "gif.jpg");
+            a = new AutoPart("330", "Bomp", "3bx", "Lexus", 5, 45.99, 90.99, "Images/image.jpg");
             session.save(a);
             LoginFrame startFrame = new LoginFrame();
 
