@@ -10,7 +10,10 @@ import Domain.AutoPart;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.OutputStream;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -70,7 +73,7 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                         Double price = Double.parseDouble(PriceTextField.getText());
                         int quantity = Integer.parseInt(QuantityTextField.getText());
 
-                       a = new AutoPart(number, name, model, brand, quantity, cost, price, img);
+                        a = new AutoPart(number, name, model, brand, quantity, cost, price, img);
                         AutoPartServices.createAutoParts(a);
 
                         AutoPartFrame.update();

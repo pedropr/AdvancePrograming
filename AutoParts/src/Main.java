@@ -47,23 +47,20 @@ public class Main {
             /**
              * This testing park and population table, create default values
              */
+            /* To use this change in hibernate.cfg.xml update to create
             Users users = new Users("Default", "Password");
             session.save(users);
-            AutoPart a = new AutoPart();
-            a.setCarbrand("Toyota");
-            a.setCarmodel("343BC");
-            a.setPartcost(20.00);
-            a.setPartname("Bomber");
-            a.setPartprice(300.00);
-            a.setQuantity(5);
-            session.save(a);
-            a = new AutoPart("333", "Bomp", "3bx", "Lexus", 5, 45.99, 90.99, "Images/image.jpg");
-            session.save(a);
-            a = new AutoPart("332", "Bomp", "4bx", "Lexus", 5, 45.99, 90.99, "Images/image.jpg");
-            session.save(a);
-            a = new AutoPart("330", "Bomp", "3bx", "Lexus", 5, 45.99, 90.99, "Images/image.jpg");
-            session.save(a);
+            users = new Users("Pedro", "1234");
+            session.save(users);
+            users = new Users("Jorge", "1234");
+            session.save(users);
+            users = new Users("Richard", "1234");
+            session.save(users);
+            users = new Users("Test", "1234");
+            session.save(users);
+            */
             LoginFrame startFrame = new LoginFrame();
+
 
         }catch (Exception e){
 

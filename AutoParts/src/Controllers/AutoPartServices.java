@@ -25,6 +25,9 @@ public class AutoPartServices {
      *
      * @param s
      */
+    public static void closeSession(){
+        session.close();
+    }
     public AutoPartServices(Session s){
         session = s;
     }

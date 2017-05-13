@@ -6,22 +6,17 @@
 package GUI;
 
 import Controllers.AutoPartServices;
+import Controllers.UsersServices;
 import Domain.AutoPart;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
-import java.*;
 
 /**
  *
@@ -41,7 +36,7 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
 
     /**
-     *
+     * Default Constructore
      */
     public AutoPartFrame() {
         super("AutoParts");
@@ -81,6 +76,29 @@ public class AutoPartFrame extends javax.swing.JFrame {
                 }
             }
         });
+        super.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                AutoPartServices.closeSession();
+                dispose();
+                super.windowClosing(e);
+            }
+        });
+
+        Search.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String partNo = JOptionPane.showInputDialog(SearchjTable,"Part No: ");
+                ArrayList<AutoPart> result =(ArrayList<AutoPart>) AutoPartServices.searchAutoParts(partNo);
+                //System.out.println(result);
+                if(result.isEmpty()){
+                    JOptionPane.showMessageDialog(SearchjTable, "No part # found", "Error", JOptionPane.ERROR_MESSAGE);
+                }else {
+                    addAutoPartToTable(result);
+                }
+            }
+        });
+
 
 
 
@@ -130,14 +148,14 @@ public class AutoPartFrame extends javax.swing.JFrame {
         AddAP = new javax.swing.JMenuItem();
         ModifyAP = new javax.swing.JMenuItem();
         DisplayAP = new javax.swing.JMenuItem();
-        APReport = new javax.swing.JMenuItem();
+        Search = new javax.swing.JMenuItem();
         Quit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         HelpC = new javax.swing.JMenuItem();
         AboutP = new javax.swing.JMenuItem();
 
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         SearchjTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(SearchjTable);
@@ -164,11 +182,9 @@ public class AutoPartFrame extends javax.swing.JFrame {
 
         DisplayAP.setText("Display Auto Part");
         jMenu1.add(DisplayAP);
+
         Search.setText("Search");
         jMenu1.add(Search);
-
-        APReport.setText("Auto Part Report");
-        jMenu1.add(APReport);
 
         Quit.setText("Exit");
         Quit.addActionListener(new java.awt.event.ActionListener() {
@@ -243,7 +259,7 @@ public class AutoPartFrame extends javax.swing.JFrame {
             ArrayList<AutoPart> result =(ArrayList<AutoPart>) AutoPartServices.searchAutoParts(partNo);
             //System.out.println(result);
             if(result.isEmpty()){
-                JOptionPane.showMessageDialog(APReport, "No part # found", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(SearchjTable, "No part # found", "Error", JOptionPane.ERROR_MESSAGE);
             }else {
                 modifyFrame = new ModifyAutoPartFrame(result.get(0));
                 modifyFrame.setVisible(true);
@@ -254,7 +270,10 @@ public class AutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ModifyAPActionPerformed
 
     private void QuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitActionPerformed
-System.exit(0);
+        AutoPartServices.closeSession();
+
+        System.exit(0);
+
     }//GEN-LAST:event_QuitActionPerformed
 
     /**
@@ -293,9 +312,8 @@ System.exit(0);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem APReport;
+    private javax.swing.JMenuItem Search;
     private javax.swing.JMenuItem AboutP;
-    private javax.swing.JMenuItem Search = new JMenuItem();
     private javax.swing.JMenuItem AddAP;
     private javax.swing.JMenuItem DisplayAP;
     private javax.swing.JMenuItem HelpC;
