@@ -30,13 +30,18 @@ import java.*;
 public class AutoPartFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form AutoPartFrame
+     * Frame that will static to prevent multiple frame to be open
      */
 
     private static AddAutoPartFrame addAutoFrame;
     private static ModifyAutoPartFrame modifyFrame;
-    //We need to create about frame and help frame
+    private static AboutFrame aboutFrame;
+    private static HelpFrame helpFrame;
 
+
+    /**
+     *
+     */
     public AutoPartFrame() {
         super("AutoParts");
         initComponents();

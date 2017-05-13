@@ -38,20 +38,27 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         ModQuantityTextField.setText(part.getQuantity().toString());
 
         ModSaveButton.addActionListener(new ActionListener() {
+            /**
+             *
+             * @param e
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    part.setCarbrand(ModCarBrandTextField.getText());
+                    part.setCarmodel(ModCarModelTextField.getText());
+                    part.setImages(ModPartImgTextField.getText());
+                    part.setPartcost(Double.parseDouble(ModPriceTextField.getText()));
+                    part.setPartprice(Double.parseDouble(ModCostTextField.getText()));
+                    part.setPartname(ModPartNameTextField.getText());
+                    part.setQuantity(Integer.parseInt(ModQuantityTextField.getText()));
+                    AutoPartServices.updateAutoParts(part);
+                    AutoPartFrame.update();
+                    ModifyAutoPartFrame.super.dispose();
+                }catch (Exception e1){
+                    JOptionPane.showMessageDialog(ModCarBrandjLabel, "Invalid input for Cost, Price or Quantity, most be numbers", "Error", JOptionPane.ERROR_MESSAGE);
 
-                part.setCarbrand(ModCarBrandTextField.getText());
-                part.setCarmodel(ModCarModelTextField.getText());
-                part.setImages(ModPartImgTextField.getText());
-                part.setPartcost(Double.parseDouble(ModPriceTextField.getText()));
-                part.setPartprice(Double.parseDouble(ModCostTextField.getText()));
-                part.setPartname(ModPartNameTextField.getText());
-                part.setQuantity(Integer.parseInt(ModQuantityTextField.getText()));
-                AutoPartServices.updateAutoParts(part);
-
-                ModifyAutoPartFrame.super.dispose();
-
+                }
 
             }
         }
@@ -60,6 +67,9 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Default Constructore
+     */
     public ModifyAutoPartFrame(){
         initComponents();
     }
@@ -234,6 +244,7 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ModCancelButtonActionPerformed
 
     /**
+     * Test of the frame without functionality
      * @param args the command line arguments
      */
     public static void main(String args[]) {
