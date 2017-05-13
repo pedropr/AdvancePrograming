@@ -25,8 +25,6 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         //System.out.println(p);
         initComponents();
 
-        SearchLabel.setVisible(false);
-        SearchTextField.setVisible(false);
 
         this.part = p;
         ModCarBrandTextField.setText(part.getCarbrand());
@@ -82,8 +80,6 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        SearchLabel = new javax.swing.JLabel();
-        SearchTextField = new javax.swing.JTextField();
         ModPartNameLabel = new javax.swing.JLabel();
         ModPartImgjLabel = new javax.swing.JLabel();
         ModCarModeljLabel = new javax.swing.JLabel();
@@ -100,18 +96,13 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         ModPriceTextField = new javax.swing.JTextField();
         ModSaveButton = new javax.swing.JButton();
         ModCancelButton = new javax.swing.JButton();
+        AddimgjButton = new javax.swing.JButton();
 
 
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-        SearchLabel.setText("Search Part No. :");
-
-        SearchTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchTextFieldActionPerformed(evt);
-            }
-        });
+        setTitle("Modify Auto Part");
 
         ModPartNameLabel.setText("Part Name:");
 
@@ -126,10 +117,15 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
         ModCostjLabel.setText("Cost:");
 
         ModPricejLabel.setText("Price:");
-
         ModPartImgTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModPartImgTextFieldActionPerformed(evt);
+            }
+        });
+
+        ModCarModelTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModCarModelTextFieldActionPerformed(evt);
             }
         });
 
@@ -148,88 +144,104 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
             }
         });
 
+        AddimgjButton.setText("...");
+        AddimgjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddimgjButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ModSaveButton)
-                    .addComponent(ModPricejLabel)
-                    .addComponent(ModCostjLabel)
-                    .addComponent(ModQuantityjLabel)
-                    .addComponent(ModCarBrandjLabel)
-                    .addComponent(ModCarModeljLabel)
-                    .addComponent(ModPartNameLabel)
-                    .addComponent(SearchLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ModCancelButton)
-                .addGap(97, 97, 97))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ModPartImgjLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(ModPriceTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                        .addComponent(ModCostTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ModQuantityTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ModCarBrandTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ModCarModelTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ModPartImgTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(ModPartNameTextField, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(28, 28, 28)
+                                                .addComponent(ModPartNameLabel)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(ModPartNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(4, 4, 4)
+                                                .addComponent(ModPartImgjLabel)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(ModPartImgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(16, 16, 16)
+                                                .addComponent(AddimgjButton))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(56, 56, 56)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(ModSaveButton)
+                                                                .addGap(80, 80, 80)
+                                                                .addComponent(ModCancelButton))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(ModCostjLabel)
+                                                                        .addComponent(ModPricejLabel))
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(ModPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(ModCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                        .addGap(35, 35, 35)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addComponent(ModCarModeljLabel)
+                                                                .addComponent(ModCarBrandjLabel)
+                                                                .addComponent(ModQuantityjLabel))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                                .addComponent(ModCarBrandTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(ModQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGroup(layout.createSequentialGroup()
+                                                                        .addComponent(ModCarModelTextField)
+                                                                        .addGap(2, 2, 2))))))
+                                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchLabel)
-                    .addComponent(SearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModPartNameLabel)
-                    .addComponent(ModPartNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModPartImgjLabel)
-                    .addComponent(ModPartImgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModCarModeljLabel)
-                    .addComponent(ModCarModelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModCarBrandjLabel)
-                    .addComponent(ModCarBrandTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModQuantityjLabel)
-                    .addComponent(ModQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModCostjLabel)
-                    .addComponent(ModCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModPricejLabel)
-                    .addComponent(ModPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ModSaveButton)
-                    .addComponent(ModCancelButton))
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModPartNameLabel)
+                                        .addComponent(ModPartNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModPartImgjLabel)
+                                        .addComponent(ModPartImgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(AddimgjButton))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModCarModelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ModCarModeljLabel))
+                                .addGap(10, 10, 10)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModCarBrandTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ModCarBrandjLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModQuantityjLabel)
+                                        .addComponent(ModQuantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModCostTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ModCostjLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ModPricejLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(ModSaveButton)
+                                        .addComponent(ModCancelButton))
+                                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchTextFieldActionPerformed
 
     private void ModCostTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModCostTextFieldActionPerformed
         // TODO add your handling code here:
@@ -240,8 +252,18 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ModPartImgTextFieldActionPerformed
 
     private void ModCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModCancelButtonActionPerformed
-    System.exit(0);
+        super.dispose();
     }//GEN-LAST:event_ModCancelButtonActionPerformed
+
+    private void AddimgjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddimgjButtonActionPerformed
+
+    }//GEN-LAST:event_AddimgjButtonActionPerformed
+
+    private void ModCarModelTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModCarModelTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ModCarModelTextFieldActionPerformed
+
+
 
     /**
      * Test of the frame without functionality
@@ -281,6 +303,7 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddimgjButton;
     private javax.swing.JButton ModCancelButton;
     private javax.swing.JTextField ModCarBrandTextField;
     private javax.swing.JLabel ModCarBrandjLabel;
@@ -297,7 +320,5 @@ public class ModifyAutoPartFrame extends javax.swing.JFrame {
     private javax.swing.JTextField ModQuantityTextField;
     private javax.swing.JLabel ModQuantityjLabel;
     private javax.swing.JButton ModSaveButton;
-    private javax.swing.JLabel SearchLabel;
-    private javax.swing.JTextField SearchTextField;
     // End of variables declaration//GEN-END:variables
 }
