@@ -47,18 +47,31 @@ public class Main {
             /**
              * This testing park and population table, create default values
              */
-            /* To use this change in hibernate.cfg.xml update to create
+            //*To use this change in hibernate.cfg.xml update to create
             Users users = new Users("Default", "Password");
-            session.save(users);
+            if(!UsersServices.authentication(users.getUsername(), users.getPassword())){
+                session.save(users);
+            }
+
+
             users = new Users("Pedro", "1234");
-            session.save(users);
+            if(!UsersServices.authentication(users.getUsername(), users.getPassword())){
+                session.save(users);
+            }
             users = new Users("Jorge", "1234");
-            session.save(users);
+            if(!UsersServices.authentication(users.getUsername(), users.getPassword())){
+                session.save(users);
+            }
             users = new Users("Richard", "1234");
-            session.save(users);
+            if(!UsersServices.authentication(users.getUsername(), users.getPassword())){
+                session.save(users);
+            }
             users = new Users("Test", "1234");
-            session.save(users);
-            */
+            if(!UsersServices.authentication(users.getUsername(), users.getPassword())){
+                session.save(users);
+            }
+
+            //*/
             LoginFrame startFrame = new LoginFrame();
 
 

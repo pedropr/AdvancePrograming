@@ -13,13 +13,12 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "AUTOPART", schema = "APP", catalog = "")
+@Table
 public class AutoPart {
     @Id
     @GeneratedValue
     private int id;
 
-    @Column(unique = true)
     private String partno;
 
     private String images;
@@ -89,8 +88,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "PARTNO")
+
     public String getPartno() {
         return partno;
     }
@@ -107,8 +105,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "PARTNAME")
+
     public String getPartname() {
         return partname;
     }
@@ -125,8 +122,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "CARMODEL")
+
     public String getCarmodel() {
         return carmodel;
     }
@@ -143,8 +139,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "CARBRAND")
+
     public String getCarbrand() {
         return carbrand;
     }
@@ -161,8 +156,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "QUANTITY")
+
     public Integer getQuantity() {
         return quantity;
     }
@@ -179,8 +173,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "PARTCOST")
+
     public Double getPartcost() {
         return partcost;
     }
@@ -197,8 +190,7 @@ public class AutoPart {
      *
      * @return
      */
-    @Basic
-    @Column(name = "PARTPRICE")
+
     public Double getPartprice() {
         return partprice;
     }

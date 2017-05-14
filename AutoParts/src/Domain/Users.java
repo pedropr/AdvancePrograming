@@ -16,7 +16,6 @@ public class Users {
     @GeneratedValue
     private int Id;
 
-    @Column(unique = true)
     private String username;
 
     private String password;
