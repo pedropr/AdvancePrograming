@@ -30,7 +30,7 @@ public class Users {
     }
 
     /**
-     *
+     * Get Id
      * @return
      */
     public int getId() {
@@ -38,7 +38,7 @@ public class Users {
     }
 
     /**
-     *
+     * Get Username
      * @return
      */
     public String getUsername() {
@@ -46,7 +46,7 @@ public class Users {
     }
 
     /**
-     *
+     * Get Password
      * @return
      */
     public String getPassword() {
@@ -54,15 +54,15 @@ public class Users {
     }
 
     /**
-     *
-     * @param id
+     * Set Id
+     * @param id Integer
      */
     public void setId(int id) {
         this.Id = Id;
     }
 
     /**
-     *
+     * Set Username
      * @param username
      */
     public void setUsername(String username) {
@@ -70,17 +70,17 @@ public class Users {
     }
 
     /**
-     *
-     * @param password
+     * Set Password
+     * @param password String
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     *
-     * @param o
-     * @return
+     * Check if object are equal
+     * @param o Objects
+     * @return Boolean
      */
     @Override
     public boolean equals(Object o) {
@@ -96,8 +96,8 @@ public class Users {
     }
 
     /**
-     *
-     * @return
+     * HashCode of object
+     * @return Integer
      */
     @Override
     public int hashCode() {
@@ -108,8 +108,8 @@ public class Users {
     }
 
     /**
-     *
-     * @return
+     * To String
+     * @return String
      */
     @Override
     public String toString() {

@@ -19,7 +19,8 @@ import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 /**
- *
+ * Main AutoPart Frame
+ * Here is were all frame all call for Auto Part
  * @author RALP
  */
 public class AutoPartFrame extends javax.swing.JFrame {

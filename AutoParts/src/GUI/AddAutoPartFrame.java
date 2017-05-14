@@ -7,17 +7,19 @@ package GUI;
 
 import Controllers.AutoPartServices;
 import Domain.AutoPart;
+import org.hibernate.query.criteria.internal.predicate.ExistsPredicate;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.OutputStream;
+import java.util.InvalidPropertiesFormatException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
- *
+ * Add Auto Part Frame
  * @author RALP
  */
 public class AddAutoPartFrame extends javax.swing.JFrame {
@@ -48,6 +50,9 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
     private javax.swing.JButton SaveButton;
     private javax.swing.JButton jButton1;
 
+    /**
+     * Default Constructor
+     */
     public AddAutoPartFrame(){
         super("Add AutoPart");
         initComponents();
@@ -62,7 +67,7 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                         || CostTextField.getText().isEmpty() || PartImgTextField.getText().isEmpty()
                         || PartNameTextField.getText().isEmpty() ||  PartNumTextField.getText().isEmpty()
                         || PriceTextField.getText().isEmpty() || QuantityTextField.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(SaveButton, "Empty Textbox", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(SaveButton, "Empty Text Box", "Error", JOptionPane.ERROR_MESSAGE);
                 }else {
                         String brand = CarBrandTextField.getText();
                         String model = CarModelTextField.getText();
@@ -70,6 +75,9 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                         String img = PartImgTextField.getText();
                         String name = PartNameTextField.getText();
                         String number =PartNumTextField.getText();
+                        if(AutoPartServices.ifAutoPartExits(number)){
+                            throw new InvalidPropertiesFormatException("AutoPart Exits");
+                        }
                         Double price = Double.parseDouble(PriceTextField.getText());
                         int quantity = Integer.parseInt(QuantityTextField.getText());
 
@@ -80,8 +88,13 @@ public class AddAutoPartFrame extends javax.swing.JFrame {
                         AddAutoPartFrame.super.dispose();
 
                     }
-                } catch (Exception e1) {
-                        JOptionPane.showMessageDialog(SaveButton, "Part Price, Part Cost and Quantiy most be a number", "Error: Invalid Input", JOptionPane.ERROR_MESSAGE);
+
+                } catch (InvalidPropertiesFormatException e1){
+
+                    JOptionPane.showMessageDialog(SaveButton, "AutoPart exist in database", "Error: Auto Part Exist", JOptionPane.ERROR_MESSAGE);
+                }
+                catch (Exception e1) {
+                        JOptionPane.showMessageDialog(SaveButton, "Part Price(##.##), Part Cost (##.##), Quantify(##), can only be numbers", "Error: Invalid Input Format", JOptionPane.ERROR_MESSAGE);
                 }
 
             }

@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * Created by Pedro on 5/13/2017.
+ * Display Frame for AutoPart
  */
 public class DisplayFrame extends JFrame {
     private JPanel MainFrame;
@@ -23,6 +24,10 @@ public class DisplayFrame extends JFrame {
     private String image;
     private AutoPart autoPart;
 
+    /**
+     * Main Constructore
+     * @param a AutoPart
+     */
     public DisplayFrame(AutoPart a){
         super("AutoPart - " + a.getPartno());
         setSize(500,540);
@@ -34,6 +39,9 @@ public class DisplayFrame extends JFrame {
 
     }
 
+    /**
+     * Fill the frame with AutoPart receive from Main Frame
+     */
     private void fillFrame(){
         PartNo.setText("Part No: " + autoPart.getPartno());
         PartName.setText("Part Name: " + autoPart.getPartname());
@@ -54,6 +62,14 @@ public class DisplayFrame extends JFrame {
 
 
     }
+
+    /**
+     * Resize the image
+     * @param srcImg Image
+     * @param w width
+     * @param h height
+     * @return resize Image
+     */
     private Image getScaledImage(Image srcImg, int w, int h){
         BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = resizedImg.createGraphics();

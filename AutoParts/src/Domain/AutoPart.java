@@ -3,12 +3,15 @@ package Domain;
 import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = "getAllParts", query = "select p From AutoPart p"),
-        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partno like :partno")
+        @NamedQuery(name = "searchAutoParts", query = "select p from AutoPart p where p.partno like :partno"),
+        @NamedQuery(name = "getAutoPart", query = "select p from AutoPart p where p.partno = :partno")
 
 })
 
 /**
  * Created by Pedro on 5/1/2017.
+ * Domain part of AutoPart
+ * Simple java class
  */
 
 
@@ -41,13 +44,13 @@ public class AutoPart {
 
     /**
      *
-     * @param partno
-     * @param partname
-     * @param carmodel
-     * @param carbrand
-     * @param quantity
-     * @param partcost
-     * @param partprice
+     * @param partno part #
+     * @param partname part name
+     * @param carmodel car model
+     * @param carbrand car brand
+     * @param quantity quantity
+     * @param partcost part cost
+     * @param partprice part price
      */
     public AutoPart(String partno, String partname, String carmodel, String carbrand, Integer quantity, Double partcost, Double partprice, String images) {
         this.partno = partno;
@@ -61,32 +64,32 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @return
+     * Return Id
+     * @return return id
      */
     public int getId() {
         return id;
     }
 
     /**
-     *
-     * @return
+     *  Return Path of Image
+     * @return Image Path
      */
     public String getImages() {
         return images;
     }
 
     /**
-     *
-     * @param images
+     * Set Images Path
+     * @param images String - images images path
      */
     public void setImages(String images) {
         this.images = images;
     }
 
     /**
-     *
-     * @return
+     * get Part #
+     * @return String Part no#
      */
 
     public String getPartno() {
@@ -94,7 +97,7 @@ public class AutoPart {
     }
 
     /**
-     *
+     * Set Part #
      * @param partno
      */
     public void setPartno(String partno) {
@@ -102,8 +105,8 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @return
+     * Get Part Name
+     * @return String - Part Name
      */
 
     public String getPartname() {
@@ -111,16 +114,16 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @param partname
+     * Set Part Name
+     * @param partname String - Part Name
      */
     public void setPartname(String partname) {
         this.partname = partname;
     }
 
     /**
-     *
-     * @return
+     * Get Car Model
+     * @return String - Car Model
      */
 
     public String getCarmodel() {
@@ -128,16 +131,16 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @param carmodel
+     * Set Carmodel
+     * @param carmodel String - Car Model
      */
     public void setCarmodel(String carmodel) {
         this.carmodel = carmodel;
     }
 
     /**
-     *
-     * @return
+     * Get Car Brand
+     * @return String - Car Brand
      */
 
     public String getCarbrand() {
@@ -145,7 +148,7 @@ public class AutoPart {
     }
 
     /**
-     *
+     * Set Car Brand
      * @param carbrand
      */
     public void setCarbrand(String carbrand) {
@@ -153,8 +156,8 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @return
+     * Get Quantity
+     * @return Integer - Quantity
      */
 
     public Integer getQuantity() {
@@ -162,16 +165,16 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @param quantity
+     * Set Quantity
+     * @param quantity Integer - Quantity
      */
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
     /**
-     *
-     * @return
+     * Get Part Cost
+     * @return Double - Part Cost
      */
 
     public Double getPartcost() {
@@ -179,16 +182,16 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @param partcost
+     * Set Part Cost
+     * @param partcost Double - Part Cost
      */
     public void setPartcost(Double partcost) {
         this.partcost = partcost;
     }
 
     /**
-     *
-     * @return
+     * Get Part Price
+     * @return Double - get Part Price
      */
 
     public Double getPartprice() {
@@ -196,17 +199,17 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @param partprice
+     * Set Part Price
+     * @param partprice Double - get Part Price
      */
     public void setPartprice(Double partprice) {
         this.partprice = partprice;
     }
 
     /**
-     *
-     * @param o
-     * @return
+     * Check if they equal
+     * @param o objects
+     * @return true if they are the same object, false if not
      */
     @Override
     public boolean equals(Object o) {
@@ -227,8 +230,8 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @return
+     * Hash code of Auto Part
+     * @return Integer
      */
     @Override
     public int hashCode() {
@@ -243,8 +246,8 @@ public class AutoPart {
     }
 
     /**
-     *
-     * @return
+     * To String of AutoPart Object
+     * @return String
      */
     @Override
     public String toString() {

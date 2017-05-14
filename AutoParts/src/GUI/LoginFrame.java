@@ -12,13 +12,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
+ *  Log in Frame
  * @author RALP
  */
 public class LoginFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
+     * Default Constructore
      */
     public LoginFrame() {
         super("Login");

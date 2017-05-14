@@ -10,8 +10,9 @@
 package GUI;
 
 /**
- *
+ * About Frame of Application
  * @author Author: Jorge E. Maldonado Fonrodona maldonado_88526@students.pupr.edu
+ *
  */
 
 
@@ -19,6 +20,7 @@ public class AboutFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form AboutFrame
+     * Default Constructore
      */
     public AboutFrame() {
         initComponents();

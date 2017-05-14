@@ -14,14 +14,16 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 /**
- *
+ * Modify Frame for AutoPart
  * @author RALP
  */
 public class ModifyAutoPartFrame extends javax.swing.JFrame {
     private AutoPart part;
     private final JFileChooser fc = new JFileChooser();
+
     /**
-     * Creates new form ModifyAutoPartFrame
+     * Default Constructore, Initialize de Modify Frame
+     * @param p AutoPart
      */
     public ModifyAutoPartFrame(AutoPart p) {
         //System.out.println(p);

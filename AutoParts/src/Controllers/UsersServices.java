@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * Created by Pedro on 5/3/2017.
+ * This the connection between domain and gui, controll only the users data
  */
 public class UsersServices {
     public UsersServices(Session s){
@@ -25,6 +26,12 @@ public class UsersServices {
     }
     private static Session session;
 
+    /**
+     *
+     * @param userName
+     * @param password
+     * @return
+     */
     public static boolean authentication(String userName, String password){
         //System.out.println(session.isOpen());
         Query query = session.getNamedQuery("Authentication").setParameter("username", userName)
@@ -38,11 +45,23 @@ public class UsersServices {
 
     }
 
+    /**
+     *
+     * @param userName
+     * @param password
+     * @return
+     */
     public static boolean createUser(String userName, String password) {
         session.save(new Users(userName, password));
         return true;
     }
 
+    /**
+     *
+     * @param userName
+     * @param password
+     * @return
+     */
     public static boolean updateUser(String userName, String password) {
         Query query = session.getNamedQuery("Authentication").setParameter("username", userName)
                 .setParameter("password", password);
@@ -55,12 +74,24 @@ public class UsersServices {
         return true;
     }
 
+    /**
+     *
+     * @param session
+     * @return
+     */
     public List<Users> getUsers(Session session) {
         Query query = session.getNamedQuery("getAllUsers");
         ArrayList<Users> results = (ArrayList<Users>) query.list();
         return results;
     }
 
+    /**
+     *
+     * @param session
+     * @param userName
+     * @param password
+     * @return
+     */
     public Users getUsers(Session session, String userName, String password) {
         Query query = session.getNamedQuery("Authentication").setParameter("username", userName)
                 .setParameter("password", password);

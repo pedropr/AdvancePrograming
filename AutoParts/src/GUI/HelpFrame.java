@@ -9,7 +9,7 @@
  */
 package GUI;
 /**
- *
+ * Help Frame
  * @author Author: Jorge E. Maldonado Fonrodona maldonado_88526@students.pupr.edu
  */
 public class HelpFrame extends javax.swing.JFrame {
